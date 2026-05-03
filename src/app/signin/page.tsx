@@ -2,4 +2,5 @@ import React from 'react'
 
 export default function     SignInPage(){
 return <div>Sign In</div>
+return <div>SignIn</div>
 }
