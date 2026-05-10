@@ -27,9 +27,11 @@ export default function ProductsPage() {
   const [products, setProducts] = useState([]);
   const handleSubmit = () => {
     if (!product.name || !product.price || !product.photo) return;
+    //@ts-ignore
     setProducts((pre) => [...pre, product]);
     setIsOpen(false);
     setProduct({
+      //@ts-ignore
       id: crypto.randomUUID(),
       name: "",
       price: 0,
@@ -111,8 +113,10 @@ export default function ProductsPage() {
       </Dialog>
       <div className="grid grid-cols-3 gap-4">
        
-        {products.map((product, index) => (
-         <div key= {product .id} className= "flex flex-col p-4 border rounded-lg">
+        {products.map((product:any, index) => (
+          
+         <div key= {product.id} className= "flex flex-col p-4 border rounded-lg">
+          
           <img src= {product.photo} alt={product.name} />
           <div className=" flex justify-between ">
 
